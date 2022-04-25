@@ -48,3 +48,13 @@ class LibraryManagement:
                 self.authors.pop(index)
                 return f"{name}"
         return "No data found"
+
+    # Author Rahul
+    # details: code to add new book in the system
+    def add_book(self, name, author, copies):
+        self.books.append({
+            "name": name,
+            "author": author,
+            "copies": copies
+        })
+        # return f"{name}"
