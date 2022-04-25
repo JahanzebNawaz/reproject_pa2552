@@ -87,3 +87,16 @@ class LibraryManagement:
                 self.subscribers.pop(index)
                 return f"{rollno} rollno deleted"
         return "No data Found"
+
+    # Author: Divya
+    # Details: a function to add subscriptions in the library system.
+    def add_subscriptions(self, rollno, book_index, amount, days):
+        self.subscriptions.append(
+            {
+                "student": rollno,
+                "book": book_index,
+                "amount": amount,
+                "days": days
+            }
+        )
+        # return f"Book subscription added for rollno {rollno}"
