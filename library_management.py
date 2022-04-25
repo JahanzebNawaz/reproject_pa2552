@@ -74,6 +74,5 @@ class LibraryManagement:
     def get_subscriber(self, rollno):
         for index in range(len(self.subscribers)):
             if self.subscribers[index]["rollno"] == rollno:
-                # return self.subscribers[index]
-                pass
+                return self.subscribers[index]
         return "No data Found"
