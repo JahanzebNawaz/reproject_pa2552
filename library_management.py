@@ -57,4 +57,4 @@ class LibraryManagement:
             "author": author,
             "copies": copies
         })
-        # return f"{name}"
+        return f"{name}"
