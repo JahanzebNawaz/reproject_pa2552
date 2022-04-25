@@ -69,6 +69,7 @@ class LibraryManagement:
         })
         return f"{name}"
 
+    # Author: Lakshmi
     # this function returns the data of the existing subscriber incase it does not match with any
     # rollno it return no data found.
     def get_subscriber(self, rollno):
@@ -77,6 +78,9 @@ class LibraryManagement:
                 return self.subscribers[index]
         return "No data Found"
 
+    # Author: Lakshmi
+    # details: function to delete subscriber from the subscribers list. using the
+    # roll no
     def delete_subscriber(self, rollno):
         for index in range(len(self.subscribers)):
             if self.subscribers[index]["rollno"] == rollno:
