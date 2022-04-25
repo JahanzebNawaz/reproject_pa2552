@@ -24,6 +24,22 @@ class TestSubscriber(unittest.TestCase):
         self.assertEqual(expected_data['rollno'], 23)
         self.assertEqual(expected_data['name'], data)
 
+    # test case for deleting the subscriber using rollno
+    def test_delete(self):
+        data = self.set_data()
+        expected = self.manager.subscribers[0]
+        self.assertEqual(data, expected['name'])
+        delete_data = self.manager.delete_subscriber(23)
+        self.assertEqual(delete_data, "23 rollno deleted")
+
+    # test if there is any subscriber in library system
+    def test_check_data(self):
+        data = self.manager.get_subscriber(23)
+        self.assertEqual(data, "No data Found")
+        data = self.set_data()
+        expected = self.manager.get_subscriber(23)
+        self.assertTrue(expected)
+
     # code to populate the library managemnet sys to be used.
     def set_data(self):
         name = "John Willims"

@@ -76,3 +76,10 @@ class LibraryManagement:
             if self.subscribers[index]["rollno"] == rollno:
                 return self.subscribers[index]
         return "No data Found"
+
+    def delete_subscriber(self, rollno):
+        for index in range(len(self.subscribers)):
+            if self.subscribers[index]["rollno"] == rollno:
+                self.subscribers.pop(index)
+                return f"{rollno} rollno deleted"
+        return "No data Found"
