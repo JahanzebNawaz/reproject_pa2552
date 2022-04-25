@@ -16,7 +16,6 @@ class LibraryManagement:
 
     # Author: Jahanzeb Nawaz
     # details: adding functionality for authors to be added in the system.
-
     def add_author(self, name, address):
         self.authors.append(
             {
@@ -24,5 +23,6 @@ class LibraryManagement:
                 "address": address
             }
         )
-        # return f"{name}"
+        return f"{name}"
+    
     
