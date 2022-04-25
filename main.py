@@ -1,4 +1,4 @@
-from tests import TestAuthors, TestBooks
+from tests import TestAuthors, TestBooks, TestSubscriber
 import unittest
 
 

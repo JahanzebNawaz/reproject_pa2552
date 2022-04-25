@@ -58,3 +58,22 @@ class LibraryManagement:
             "copies": copies
         })
         return f"{name}"
+
+    # Author: Lakshmi
+    # details: adding function for the subscribers to be added in the system
+    # and returns the name of the subscriber
+    def add_subscriber(self, name, rollno):
+        self.subscribers.append({
+            "name": name,
+            "rollno": rollno
+        })
+        return f"{name}"
+
+    # this function returns the data of the existing subscriber incase it does not match with any
+    # rollno it return no data found.
+    def get_subscriber(self, rollno):
+        for index in range(len(self.subscribers)):
+            if self.subscribers[index]["rollno"] == rollno:
+                # return self.subscribers[index]
+                pass
+        return "No data Found"
