@@ -1,6 +1,3 @@
-import re
-
-
 class LibraryManagement:
     """
     Library management System, a class to store data and then 
@@ -25,7 +22,6 @@ class LibraryManagement:
         )
         return f"{name}"
     
-    
     # Author Jahanzeb Nawaz
     # details adding more functionality to view a author from library mgmt system.
     # if there is no such record with the given name. it will return No data found.
@@ -33,4 +29,22 @@ class LibraryManagement:
         for index in range(len(self.authors)):
             if self.authors[index]['name'] == name:
                 return self.authors[index]
+        return "No data found"
+
+    # Author: Jahanzeb Nawaz
+    # Details: this funcionality is used to update the author record.
+    def update_author(self, name, address):
+        for index in range(len(self.authors)):
+            if self.authors[index]["name"] == name:
+                self.authors[index] = {"name": name, "address":address}
+                return f"{name}"
+        return "No data found"
+
+    # Author: Jahanzeb Nawaz
+    # Details: this funcionality is used to delete the author record.
+    def delete_author(self, name):
+        for index in range(len(self.authors)):
+            if self.authors[index]["name"] == name:
+                self.authors.pop(index)
+                return f"{name}"
         return "No data found"
