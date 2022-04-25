@@ -18,6 +18,11 @@ class TestAuthors(unittest.TestCase):
         expected_data = self.manager.authors[0]
         self.assertEqual(data, expected_data['name'])
 
+    def test_view_author(self):
+        data = self.set_author()
+        expected_data = self.manager.author_details("James")
+        self.assertEqual(expected_data['name'], data)
+
     #function to populate author data in start for each test case.
     def set_author(self):
         name = "James"

@@ -26,3 +26,11 @@ class LibraryManagement:
         return f"{name}"
     
     
+    # Author Jahanzeb Nawaz
+    # details adding more functionality to view a author from library mgmt system.
+    # if there is no such record with the given name. it will return No data found.
+    def author_details(self, name):
+        for index in range(len(self.authors)):
+            if self.authors[index]['name'] == name:
+                return self.authors[index]
+        return "No data found"
