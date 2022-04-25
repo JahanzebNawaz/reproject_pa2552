@@ -44,3 +44,16 @@ class TestSubscription(unittest.TestCase):
         get_book_on_index = self.manager.books[subscription_obj['book']]
         self.assertTrue(get_book_on_index)
 
+
+    def test_get_book_and_subscription_data(self):
+        book = self.set_book()
+        book_index = 0
+        subscription = self.add_subscription_data(23, book_index, 30, 3)
+        book = self.manager.books[book_index]
+        subscription = self.manager.subscriptions[book_index]
+        self.assertTrue(book)
+        self.assertTrue(subscription)
+        self.assertEqual(book['name'], "Rich dad Poor Dad")
+        self.assertEqual(book['author'], "James")
+        self.assertEqual(subscription['amount'], 30)
+        self.assertEqual(subscription['days'], 3)
